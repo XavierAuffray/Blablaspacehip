@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :passengers
+  devise_for :drivers
+  resources :journeys, only: %i[new create destroy show edit udpate index]
+  resources :passengers, only: %i[new create destroy show]
+  resources :resevations, only: %i[new create destroy show]
 end
