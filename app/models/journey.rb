@@ -7,5 +7,5 @@ class Journey < ApplicationRecord
   validates :date, presence: true
   validates :price, presence: true, numericality: { greater_than: 0 }
   validates :available_seats, presence: true, numericality: { only_integer: true }
-  validates :spaceship, presence: true
+  validates :spaceship_name, presence: true
 end

@@ -1,0 +1,9 @@
+<h1>Your jouneys</h1>
+
+<ul>
+  <% @journeys.each do |journey| %>
+    <li>
+      <%= journey.departure %> ---> <%= journey.arrival %>
+    </li>
+  <% end %>
+</ul>
