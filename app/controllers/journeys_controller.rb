@@ -1,12 +1,11 @@
-class JourneysController < ApplicationController
+  class JourneysController < ApplicationController
   def  new
     @journey = Journey.new
   end
 
   def create
-    driver = current_driver
     @journey = Journey.new(journey_params)
-    @journey.driver = driver
+    @journey.driver = current_driver
     if @journey.save
       redirect_to journeys_path
     else
