@@ -5,13 +5,9 @@
   </div>
 </div>
 
-  <p><%= link_to 'Sign in as Driver', new_driver_session_path %></p>
-  <p><%= link_to 'Sign in as Passenger', new_passenger_session_path %></p>
-
-
-
-
+<p><%= link_to 'Sign in as Driver', new_driver_session_path %></p>
+<p><%= link_to 'Sign in as Passenger', new_passenger_session_path %></p>
 <p><%= link_to 'create Driver account', new_driver_registration_path %></p>
 <p><%= link_to 'create Passenger account', new_passenger_registration_path %></p>
 <p><%= link_to 'Log out', destroy_driver_session_path, method: :delete %></p>
-
+<p><%= link_to 'Create a Journey', new_journey_path %></p>
