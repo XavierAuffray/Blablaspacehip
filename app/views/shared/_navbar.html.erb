@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <%= image_tag "https://i.imgur.com/X7zeESG.png" %>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +15,7 @@
           <%= link_to "Home", "#", class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
+          <%= link_to 'Log out', destroy_driver_session_path, method: :delete, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -28,6 +28,24 @@
       <% else %>
         <li class="nav-item">
           <%= link_to "Login", new_passenger_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Sign in as Driver', new_driver_session_path, class: "nav-link" %>
+          </li>
+        <li class="nav-item">
+          <%= link_to 'Sign in as Passenger', new_passenger_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'create Driver account', new_driver_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'create Passenger account', new_passenger_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to 'Log out', destroy_driver_session_path, method: :delete , class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to 'Create a Journey', new_journey_path, class: "nav-link" %>
         </li>
       <% end %>
     </ul>
