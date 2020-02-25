@@ -3,7 +3,8 @@
 <ul>
   <% @journeys.each do |journey| %>
     <li>
-      <%= journey.departure %> ---> <%= journey.arrival %>
+      <%= journey.id %>-------<%= journey.departure %> ---> <%= journey.arrival %>
+      <%= link_to 'reserve',new_journey_reservation_path(journey) %>
     </li>
   <% end %>
 </ul>
