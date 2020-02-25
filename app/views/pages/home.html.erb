@@ -2,6 +2,11 @@
   <div class="container">
     <h1>Blablaspace</h1>
     <h3>Live your childhood fantasy by travelling to space, going to techno clubs with aliens and drinking goo</h3>
+    <div class="box-2">
+    <div class="btn btn-two">
+   <%= link_to "Login", login_path %>
+    </div>
+</div>
   </div>
 </div>
 
@@ -12,7 +17,13 @@
     </li>
   <% end %>
 </ul>
-
+<ul>
+  <% Journey.all.each do |journey| %>
+    <li>
+      <%= journey.departure %> ---> <%= journey.arrival %>
+    </li>
+  <% end %>
+</ul>
 <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fab fa-github"></i></a>
@@ -21,19 +32,10 @@
     <a href="#"><i class="fab fa-twitter"></i></a>
     <a href="#"><i class="fab fa-linkedin"></i></a>
   </div>
-  <div class="">
-
-<ul>
-  <% Journey.all.each do |journey| %>
-    <li>
-      <%= journey.departure %> ---> <%= journey.arrival %>
-    </li>
-  <% end %>
-</ul>
-
-<div class="footer">
-        This footer was made by aliens with <i class="fas fa-heart"></i> at Le Wagon
-    </div>
+  <div class="credit">
+    This footer was made by aliens with
+    <i class="fas fa-heart"></i> at Le Wagon
   </div>
+
 </div>
 
