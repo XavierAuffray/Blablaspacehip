@@ -1,0 +1,6 @@
+<h1>Make a reservation</h1>
+
+<%= simple_form_for [@journey, @reservation] do |f| %>
+  <%= f.input :amount_of_passengers, label: 'Specify the number of passengers', error: 'The number is mandatory, please specify one' %>
+  <%= f.button :submit %>
+<% end %>
