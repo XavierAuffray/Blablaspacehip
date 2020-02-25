@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :drivers
   devise_for :passengers
   resources :journeys, only: %i[new create destroy show edit udpate index] do
-    resources :reservations, only: %i[new create destroy show]
+    resources :reservations
   end
   resources :passengers, only: %i[new create destroy show]
   get 'pages/login', to: 'pages#login', as: :login
