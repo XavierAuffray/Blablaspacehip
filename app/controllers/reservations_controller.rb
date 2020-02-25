@@ -11,6 +11,8 @@ class ReservationsController < ApplicationController
     @passenger = current_passenger
     @reservation.passenger = @passenger
     if @reservation.save
+      @journey.available_seats -= @reservation.amount_of_passengers
+      @journey.save
       redirect_to journey_reservation_path(@journey, @reservation)
     else
       render 'new'
