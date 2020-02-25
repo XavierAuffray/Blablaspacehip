@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_02_25_091301) do
     t.string "spaceship_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "driver_name"
     t.bigint "driver_id", null: false
     t.index ["driver_id"], name: "index_journeys_on_driver_id"
   end
