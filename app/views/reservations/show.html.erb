@@ -1,0 +1,15 @@
+<div class="container mt-5">
+  <h1>Your reservation</h1>
+
+  <%#= link_to 'edit', edit_journey_reservation_path(@reservation.journey_id, @reservation) %>
+  <%= link_to "Delete", journey_reservation_path(@reservation.journey_id, @reservation), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+  <div class="my-5">
+    <p>Departure: <%= @reservation.journey.departure.capitalize %></p>
+    <p>Arrival: <%= @reservation.journey.arrival.capitalize %></p>
+    <p>Name of the reservation: <%= @reservation.passenger.name.capitalize %></p>
+    <p>Price per person: <%= @reservation.journey.price %> €</p>
+    <p>Number of passengers: <%= @reservation.amount_of_passengers  %> </p>
+    <p>TOTAL PRICE: <%= @reservation.amount_of_passengers * @reservation.journey.price %> €</p>
+  </div>
+</div>

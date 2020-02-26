@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_25_091301) do
+ActiveRecord::Schema.define(version: 2020_02_26_130514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_02_25_091301) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "photo"
     t.index ["email"], name: "index_drivers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_drivers_on_reset_password_token", unique: true
   end
@@ -37,7 +38,6 @@ ActiveRecord::Schema.define(version: 2020_02_25_091301) do
     t.string "spaceship_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "driver_name"
     t.bigint "driver_id", null: false
     t.index ["driver_id"], name: "index_journeys_on_driver_id"
   end
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2020_02_25_091301) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "photo"
     t.index ["email"], name: "index_passengers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_passengers_on_reset_password_token", unique: true
   end
@@ -59,6 +60,12 @@ ActiveRecord::Schema.define(version: 2020_02_25_091301) do
     t.integer "amount_of_passengers"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "journey_id"
+    t.bigint "passenger_id"
+    t.index ["journey_id"], name: "index_reservations_on_journey_id"
+    t.index ["passenger_id"], name: "index_reservations_on_passenger_id"
   end
 
+  add_foreign_key "reservations", "journeys"
+  add_foreign_key "reservations", "passengers"
 end

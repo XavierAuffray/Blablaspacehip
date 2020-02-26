@@ -2,54 +2,22 @@
   <div class="container">
     <h1>Blablaspace</h1>
     <h3>Live your childhood fantasy by travelling to space, going to techno clubs with aliens and drinking goo</h3>
-  </div>
-</div>
-
-<h2> this is version 1.0 </h2>
-<% if (current_driver || current_passenger).nil? %>
-<p><%= link_to 'Login ', login_path %></p>
-<% end %>
-
-<% if (current_driver || current_passenger).nil? %>
-<p><%= link_to 'Sign up ', signup_path %></p>
-<% end %>
-
-<% if !(current_driver || current_passenger).nil? %>
-  <p><%= link_to 'Log out', destroy_driver_session_path, method: :delete %></p>
-<% end %>
-
-<% if !current_driver.nil? %>
-<p><%= link_to 'Create a Journey', new_journey_path %></p>
-<% end %>
-
-<ul>
-  <% Journey.all.each do |journey| %>
-    <li>
-      <%= journey.departure %> ---> <%= journey.arrival %>
-    </li>
-  <% end %>
-</ul>
-
-
-<div class="container">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1543083115-638c32cd3d58?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80)">
-  Blablaspace
-    <h1>Pages#home</h1>
-</div>
-    <p>Find me in (da club) app/views/pages/home.html.erb</p>
-  </div>
-
-<div class="card-category">
-  <div class="cards">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1536697246787-1f7ae568d89a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60)">
-      <p><%= link_to 'create account', new_driver_registration_path %></p>
-  </div>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1494022299300-899b96e49893?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
-<p><%= link_to 'Log out', destroy_driver_session_path, method: :delete %></p>
+    <div class="box-2">
+    <%= link_to "Login", login_path, class: "btn btn-two" %>
 </div>
   </div>
 </div>
-<div class="card-category">
+
+<div class="carousel-container">
+  <div class="slick-carousel" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+    <div><h3>1</h3></div>
+    <div><h3>2</h3></div>
+    <div><h3>3</h3></div>
+    <div><h3>4</h3></div>
+    <div><h3>5</h3></div>
+    <div><h3>6</h3></div>
+  </div>
+</div>
 
 <div class="footer">
   <div class="footer-links">
@@ -59,24 +27,12 @@
     <a href="#"><i class="fab fa-twitter"></i></a>
     <a href="#"><i class="fab fa-linkedin"></i></a>
   </div>
-  <div class="">
-
-<ul>
-  <% Journey.all.each do |journey| %>
-    <li>
-      <%= journey.departure %> ---> <%= journey.arrival %>
-    </li>
-  <% end %>
-</ul>
-
-
-<div class="container">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1543083115-638c32cd3d58?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80)">
-    Blablaspace
-      <h1>Pages#home</h1>
-    </div>footer-copyright">
-        This footer was made by aliens with <i class="fas fa-heart"></i> at Le Wagon
-    </div>
+  <div class="credit">
+    This footer was made by aliens with
+    <i class="fas fa-heart"></i> at Le Wagon
   </div>
-</div>
+
+
+
+
 
