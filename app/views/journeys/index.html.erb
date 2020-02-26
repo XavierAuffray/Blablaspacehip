@@ -4,7 +4,9 @@
   <% @journeys.each do |journey| %>
     <li>
       <p>From: <strong> <%= journey.departure.capitalize %></strong> to: <strong> <%= journey.arrival.capitalize %></strong> ________<%= journey.available_seats %> seat(s) left</p>
+      <% if !current_passenger.nil? %>
       <%= link_to 'reserve',new_journey_reservation_path(journey) %>
+      <% end %>
     </li>
   <% end %>
 </ul>
