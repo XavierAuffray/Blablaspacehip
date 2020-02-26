@@ -59,6 +59,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 500px;
 }
 
 .card-journey > img {
@@ -102,5 +103,11 @@
 }
 
 .slick-carousel {
-  width: 70%;
+  width: 80%;
 }
+
+.slick-slide {
+  overflow: hidden;
+  margin-left: 10px;
+}
+
