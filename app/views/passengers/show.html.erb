@@ -1,0 +1,16 @@
+<h1>Your infos</h1>
+
+<% @passenger.reservations.each do |reservation| %>
+  <div class="card-journey">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-journey-infos">
+      <div>
+        <h2> Journey: <%= reservation.journey.departure %> <i class="fas fa-space-shuttle"></i> <%= reservation.journey.arrival %></h2>
+        <p> Departure time: <%= reservation.journey.date %></p>
+        <p> Available seats: <%= reservation.journey.available_seats %></p>
+      </div>
+      <h2 class="card-journey"> €<%= reservation.journey.price %></h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-journey-user avatar-bordered" />
+    </div>
+  </div>
+<% end %>

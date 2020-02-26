@@ -10,9 +10,8 @@ class ReservationsController < ApplicationController
     @reservation.journey = @journey
     @passenger = current_passenger
     @reservation.passenger = @passenger
-    if @reservation.save
-      @journey.available_seats -= @reservation.amount_of_passengers
-      @journey.save
+    @journey.available_seats -= @reservation.amount_of_passengers
+    if @reservation.save && @journey.save
       redirect_to journey_reservation_path(@journey, @reservation)
     else
       render 'new'
@@ -23,24 +22,28 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
   end
 
-  def edit
-    @reservation = Reservation.find(params[:id])
-    @journey = Journey.find(@reservation[:journey_id])
-  end
+  # def edit
+  #   @reservation = Reservation.find(params[:id])
+  #   @journey = Journey.find(@reservation[:journey_id])
+  # end
 
-  def update
-    @reservation = Reservation.find(params[:id])
-    @journey = Reservation.find(params[:journey_id])
-    if @reservation.update(reservation_params)
-      redirect_to journey_reservation_path(@journey, @reservation)
-    else
-      render 'new'
-    end
-  end
+  # def update
+  #   @reservation = Reservation.find(params[:id])
+  #   @journey = Reservation.find(params[:journey_id])
+  #   if @reservation.update(reservation_params)
+  #     raise
+  #     redirect_to journey_reservation_path(@journey, @reservation)
+  #   else
+  #     render 'new'
+  #   end
+  # end
 
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
+    @journey = Journey.find(params[:journey_id])
+    @journey.available_seats += @reservation.amount_of_passengers
+    @journey.save
     redirect_to journeys_path
   end
 

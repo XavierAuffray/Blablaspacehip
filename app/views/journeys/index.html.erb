@@ -1,9 +1,9 @@
-<h1>Your jouneys</h1>
+<h1>Available jouneys</h1>
 
 <ul>
   <% @journeys.each do |journey| %>
     <li>
-      <p><%= journey.departure %> ---> <%= journey.arrival %> --- <%= journey.available_seats %> seats left</p>
+      <p><%= journey.departure.capitalize %> ---> <%= journey.arrival.capitalize %> ________<%= journey.available_seats %> seat(s) left</p>
       <%= link_to 'reserve',new_journey_reservation_path(journey) %>
     </li>
   <% end %>
