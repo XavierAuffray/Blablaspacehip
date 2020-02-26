@@ -24,6 +24,6 @@
   private
 
   def journey_params
-    params.require(:journey).permit(:departure, :arrival, :date, :price, :available_seats, :spaceship_name, :driver_id)
+    params.require(:journey).permit(:departure, :arrival, :date, :price, :available_seats, :spaceship_name, :driver_id, :photo)
   end
 end

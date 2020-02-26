@@ -14,7 +14,7 @@
             <i class="fas fa-minus-circle"style='color:#ff0000;'></i>
           <% end %>
         </div>
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <img src= <%= journey.photo %> />
         <div class="card-journey-infos mx-3">
           <div>
             <h2><%= journey.departure.capitalize %> <i class="fas fa-space-shuttle"></i> <%= journey.arrival.capitalize %></h2>
@@ -22,7 +22,7 @@
             <p> Available seats: <%= journey.available_seats %></p>
           </div>
           <h2 id="card-journey"> €<%= journey.price %></h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-journey-user avatar-bordered" />
+          <img src= <%= journey.driver.photo %> class= "card-journey-user avatar-bordered" />
         </div>
       </div>
     <% end %>

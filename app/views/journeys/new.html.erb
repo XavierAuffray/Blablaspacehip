@@ -7,5 +7,6 @@
   <%= f.input :price, label: 'Specify your price please', error: 'Price is mandatory, please specify one' %>
   <%= f.input :available_seats, label: 'Specify the number of available seats please', error: 'Available seats is mandatory, please specify the number' %>
   <%= f.input :spaceship_name, label: 'Specify the name of the spaceship please', error: 'Spaceship is mandatory, please specify the name' %>
+  <%= f.input :photo, required: false, autofocus: true, input_html: {value: f.object.photo || 'https://cdn.futura-sciences.com/buildsv6/images/mediumoriginal/3/b/6/3b6991cd9f_49136_pleiades-cnes.jpg'} %>
   <%= f.button :submit %>
 <% end %>
