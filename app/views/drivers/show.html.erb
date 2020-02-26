@@ -1,17 +1,30 @@
 <h1>Your Journeys</h1>
 
-<% @driver.journeys.each do |journey| %>
-  <div class="card-journey">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <div class="card-journey-infos">
-      <div>
-        <h2> Journey: <%= journey.departure %> <i class="fas fa-space-shuttle"></i> <%= journey.arrival %></h2>
-        <p> Departure time: <%= journey.date %></p>
-        <p> Available seats: <%= journey.available_seats %></p>
-        <h3> <%= link_to "Check details", journey_path(journey) %></h3>
+<div class="container">
+  <div class="row">
+    <% @driver.journeys.each do |journey| %>
+      <div class="card-journey col-sm-3">
+        <div id="infos">
+          <%= link_to journey_path(journey) do %>
+            <i class='fas fa-info-circle'></i>
+          <% end %>
+        </div>
+        <div id="delete">
+          <%= link_to journey_path(journey), data: { confirm: 'Are you sure?' }, method: :delete do %>
+            <i class="fas fa-minus-circle"style='color:#ff0000;'></i>
+          <% end %>
+        </div>
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-journey-infos mx-3">
+          <div>
+            <h2><%= journey.departure.capitalize %> <i class="fas fa-space-shuttle"></i> <%= journey.arrival.capitalize %></h2>
+            <p> Departure time: <%= journey.date %></p>
+            <p> Available seats: <%= journey.available_seats %></p>
+          </div>
+          <h2 id="card-journey"> €<%= journey.price %></h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-journey-user avatar-bordered" />
+        </div>
       </div>
-      <h2 class="card-journey"> €<%= journey.price %></h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-journey-user avatar-bordered" />
-    </div>
+    <% end %>
   </div>
-<% end %>
+</div>
