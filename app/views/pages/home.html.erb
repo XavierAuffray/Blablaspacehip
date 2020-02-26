@@ -8,23 +8,17 @@
   </div>
 </div>
 
-
-<% Journey.all.each do |journey| %>
-<div class="card-journey">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-journey-infos">
-    <div>
-      <h2> Journey: <%= journey.departure %> <i class="fas fa-space-shuttle"></i> <%= journey.arrival %></h2>
-      <p> Departure time: <%= journey.date %></p>
-      <p> Available seats: <%= journey.available_seats %></p>
-    </div>
-    <h2 class="card-journey"> €<%= journey.price %></h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-journey-user avatar-bordered" />
+<div class="carousel-container">
+  <div class="slick-carousel" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+    <div><h3>1</h3></div>
+    <div><h3>2</h3></div>
+    <div><h3>3</h3></div>
+    <div><h3>4</h3></div>
+    <div><h3>5</h3></div>
+    <div><h3>6</h3></div>
   </div>
 </div>
-      <% end %>
 
-</div>
 <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fab fa-github"></i></a>
