@@ -9,13 +9,17 @@
 </div>
 
 <div class="carousel-container">
-  <div class="slick-carousel" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
-    <div><h3>1</h3></div>
-    <div><h3>2</h3></div>
-    <div><h3>3</h3></div>
-    <div><h3>4</h3></div>
-    <div><h3>5</h3></div>
-    <div><h3>6</h3></div>
+  <div class="slick-carousel" data-slick='{"slidesToShow": 2, "slidesToScroll": 1}'>
+      <% Journey.all.each do |journey| %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://apod.nasa.gov/apod/image/1811/Phobos_Viking1_960.jpg)">
+          <h1>Journey proposition</h1>
+          <div class="card-info">
+            <p>Departure: <%= journey.departure.capitalize %> </p>
+            <p>Arrival: <%= journey.arrival.capitalize %></p>
+            <p>Price per person: <%= journey.price %> €</p>
+          </div>
+        </div>
+      <% end %>
   </div>
 </div>
 
