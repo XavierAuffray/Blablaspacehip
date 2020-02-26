@@ -1,21 +1,46 @@
 <h1>Available jouneys</h1>
 
-<ul>
-  <% @journeys.each do |journey| %>
-    <li>
-      <p>From: <strong> <%= journey.departure.capitalize %></strong> to: <strong> <%= journey.arrival.capitalize %></strong> ________
-        <% if journey.available_seats.positive? %>
-          <%= journey.available_seats %> seat(s) left</p>
-        <% else %>
-          FULL
-        <% end %>
-      <% if !current_passenger.nil? && journey.available_seats.positive? %>
-      <%= link_to 'reserve',new_journey_reservation_path(journey) %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
-
+<div class="container">
+  <div class="row">
+    <% @journeys.each do |journey| %>
+      <div class="card-journey col-sm-3">
+        <div id="infos">
+          <%= link_to journey_path(journey) do %>
+            <i class='fas fa-info-circle'></i>
+          <% end %>
+        </div>
+        <div id="delete">
+          <% if !current_driver.nil? %>
+            <%= link_to journey_path(journey), data: { confirm: 'Are you sure?' }, method: :delete do %>
+              <i class="fas fa-minus-circle"style='color:#ff0000;'></i>
+            <% end %>
+          <% end %>
+        </div>
+        <div id="buy">
+          <% if !current_passenger.nil? && journey.available_seats.positive? %>
+            <%= link_to 'Buy','#' %>
+          <% end %>
+        </div>
+        <img src= <%= journey.photo %> />
+        <div class="card-journey-infos mx-3">
+          <div>
+            <h2><%= journey.departure.capitalize %> <i class="fas fa-space-shuttle"></i> <%= journey.arrival.capitalize %></h2>
+            <p> Departure time: <%= journey.date %></p>
+            <p>
+              <% if journey.available_seats.positive? %>
+                <%= journey.available_seats %> seat(s) left</p>
+              <% else %>
+                <%= FULL %>
+              <% end %>
+            </p>
+          </div>
+          <h2 id="card-journey"> <%= journey.price %></h2>
+          <img src= <%= journey.driver.photo %> class= "card-journey-user avatar-bordered" />
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 <% if !current_driver.nil? %>
   <p><%= link_to 'Create a Journey', new_journey_path %></p>
