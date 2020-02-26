@@ -8,14 +8,3 @@
 
 
 planets = %w(earth neptune mars venus moon Uranus Saturn Mercury)
-12.times do
-  Journey.create!(
- departure: "Dilbeek",
- arrival: "Venus",
- date: Date.today + 23.days,
- price: 50000,
- available_seats: 25,
- spaceship_name: "Elitus Magnificus",
- driver: "xavier",
-)
-end

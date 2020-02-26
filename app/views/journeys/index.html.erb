@@ -15,3 +15,9 @@
     </li>
   <% end %>
 </ul>
+
+
+<% if !current_driver.nil? %>
+  <p><%= link_to 'Create a Journey', new_journey_path %></p>
+  <p><%= link_to 'View my Journeys', driver_path(current_driver) %></p>
+<% end %>
