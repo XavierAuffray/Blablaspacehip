@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <h1>Your reservation</h1>
 
-  <%= link_to 'edit', edit_journey_reservation_path(@reservation.journey_id, @reservation) %>
+  <%#= link_to 'edit', edit_journey_reservation_path(@reservation.journey_id, @reservation) %>
   <%= link_to "Delete", journey_reservation_path(@reservation.journey_id, @reservation), method: :delete, data: { confirm: 'Are you sure?' } %>
 
   <div class="my-5">
