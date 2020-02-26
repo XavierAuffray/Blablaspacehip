@@ -12,4 +12,6 @@
     <p>Number of passengers: <%= @reservation.amount_of_passengers  %> </p>
     <p>TOTAL PRICE: <%= @reservation.amount_of_passengers * @reservation.journey.price %> €</p>
   </div>
+
+  <%= link_to 'View all your reservations', passenger_path(current_passenger) %>
 </div>

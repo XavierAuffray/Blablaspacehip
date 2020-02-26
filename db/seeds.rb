@@ -9,3 +9,5 @@
 
 planets = %w(earth neptune mars venus moon Uranus Saturn Mercury)
 
+Journey.new(departure: 'earth', arrival: 'moon', date: :price, :available_seats, :spaceship_name, :driver_id)
+

@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "https://i.imgur.com/X7zeESG.png" %>
     <% end %>
 
@@ -12,7 +12,7 @@
     <ul class="navbar-nav mr-auto">
       <% if passenger_signed_in? || driver_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", root_path, class: "nav-link" %>
+          <%= link_to "All journeys", journeys_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to 'Log out', destroy_driver_session_path, method: :delete, class: "nav-link" %>
@@ -37,7 +37,7 @@
         </li>
       <% else %>
       <li class="nav-item">
-          <%= link_to "Home", root_path, class: "nav-link" %>
+          <%= link_to "All journeys", journeys_path, class: "nav-link" %>
       </li>
         <li class="nav-item">
           <%= link_to "Login", login_path, class: "nav-link" %>
