@@ -60,10 +60,14 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 500px;
+  height: auto;
+  padding: 10px;
+  margin: 30px;
+  position:relative;
 }
 
 .card-journey > img {
-  height: 200px;
+  height: 100px;
   width: 100%;
   object-fit: cover;
 }
@@ -71,7 +75,7 @@
 .card-journey h2 {
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
+  margin: auto;
 }
 
 .card-journey p {
@@ -111,3 +115,49 @@
   margin-left: 10px;
 }
 
+.backgr img {
+  height: 150px;
+  width: 150px;
+}
+
+.card-journey-infos {
+  display: flex;
+  flex-direction: column;
+}
+
+#card-journey {
+padding: 2px;
+}
+
+#infos {
+  bottom: 20px;
+  right: 20px;
+  font-size:20px;
+  position: absolute;
+  transition: 0.25s;
+}
+
+#infos a {
+  padding: 5px;
+}
+
+#infos:hover {
+  right: 20px;
+  font-size:30px;
+  position: absolute;
+}
+
+#delete {
+  bottom: 20px;
+  right: 50px;
+  font-size:20px;
+  position: absolute;
+  transition: 0.25s;
+}
+
+#delete:hover {
+  bottom: 30px;
+  right: 50px;
+  font-size:30px;
+  position: absolute;
+}
