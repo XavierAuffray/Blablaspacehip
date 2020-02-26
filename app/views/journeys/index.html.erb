@@ -3,8 +3,13 @@
 <ul>
   <% @journeys.each do |journey| %>
     <li>
-      <p>From: <strong> <%= journey.departure.capitalize %></strong> to: <strong> <%= journey.arrival.capitalize %></strong> ________<%= journey.available_seats %> seat(s) left</p>
-      <% if !current_passenger.nil? %>
+      <p>From: <strong> <%= journey.departure.capitalize %></strong> to: <strong> <%= journey.arrival.capitalize %></strong> ________
+        <% if journey.available_seats.positive? %>
+          <%= journey.available_seats %> seat(s) left</p>
+        <% else %>
+          FULL
+        <% end %>
+      <% if !current_passenger.nil? && journey.available_seats.positive? %>
       <%= link_to 'reserve',new_journey_reservation_path(journey) %>
       <% end %>
     </li>
