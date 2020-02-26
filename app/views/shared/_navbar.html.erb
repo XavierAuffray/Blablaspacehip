@@ -11,12 +11,6 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if passenger_signed_in? || driver_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "All journeys", journeys_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Log out', destroy_driver_session_path, method: :delete, class: "nav-link" %>
-        </li>
         <li class="nav-item dropdown">
           <% if !current_passenger.nil? %>
             <%= image_tag current_passenger.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -24,16 +18,24 @@
           <% if !current_driver.nil? %>
             <%= image_tag current_driver.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <% if !current_passenger.nil? %>
-            <%= link_to "Log out", destroy_passenger_session_path, method: :delete, class: "dropdown-item" %>
-            <% end %>
-            <% if !current_driver.nil? %>
-            <%= link_to "Log out", destroy_driver_session_path, method: :delete, class: "dropdown-item" %>
-            <% end %>
+
+          <div class="dropdown">
+            <div class="dropdown-content">
+              <!-- <div class="dropdown-menu dropdown-menu-right dropdown" aria-labelledby="navbarDropdown"> -->
+                <% if !current_passenger.nil? %>
+                  <%= link_to "All journeys", journeys_path, class: "dropdown-item" %>
+                  <%= link_to "My reservations", passenger_path(current_passenger.id), class: "dropdown-item" %>
+                  <%= link_to 'Log out', destroy_driver_session_path, method: :delete, class: "dropdown-item" %>
+                <% end %>
+                <% if !current_driver.nil? %>
+                  <%= link_to "All journeys", journeys_path, class: "dropdown-item" %>
+                  <%= link_to "My journeys", driver_path(current_driver), class: "dropdown-item" %>
+                  <%= link_to 'Log out', destroy_driver_session_path, method: :delete, class: "dropdown-item" %>
+                <% end %>
+              <!-- </div> -->
+            </div>
           </div>
+
         </li>
       <% else %>
       <li class="nav-item">
