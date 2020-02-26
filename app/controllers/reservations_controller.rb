@@ -31,7 +31,7 @@ class ReservationsController < ApplicationController
   def update
     @reservation = Reservation.find(params[:id])
     @journey = Reservation.find(params[:journey_id])
-    if @reservation.update(reservation_params)
+    if @reservation.updas/5/reservations/55te(reservation_params)
       redirect_to journey_reservation_path(@journey, @reservation)
     else
       render 'new'
