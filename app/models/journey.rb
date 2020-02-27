@@ -1,6 +1,6 @@
 class Journey < ApplicationRecord
   has_many :passengers, through: :reservations
-  has_many :reservations
+  has_many :reservations, dependent: :destroy
   has_one :planet
   belongs_to :driver
   validates :departure, presence: true
