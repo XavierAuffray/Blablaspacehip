@@ -32,11 +32,11 @@ p8 = Planet.create(name: "Uranus", photo: "https://solarsystem.nasa.gov/system/f
 p9 = Planet.create(name: "Venus", photo: "https://solarsystem.nasa.gov/system/feature_items/images/27_venus_jg.png")
 
 
-j1 = Journey.create(departure: p1, arrival: p5, driver: d1, price: 5000, available_seats: 30, spaceship_name: "Moon Express", date: DateTime.parse('2020-03-14T07:00:00'))
-j2 = Journey.create(departure: p1, arrival: p3, driver: d2, price: 150000, available_seats: 200, spaceship_name: "New World", date: DateTime.parse('2020-03-14T07:00:00'))
-j3 = Journey.create(departure: p2, arrival: p8, driver: d1, price: 1400, available_seats: 10, spaceship_name: "Space Explorer", date: DateTime.parse('2020-03-14T07:00:00'))
-j4 = Journey.create(departure: p7, arrival: p1, driver: d1, price: 8999, available_seats: 80, spaceship_name: "Rucket", date: DateTime.parse('2020-03-14T07:00:00'))
-j5 = Journey.create(departure: p2, arrival: p9, driver: d1, price: 600, available_seats: 5, spaceship_name: "Lightspeed", date: DateTime.parse('2020-03-14T07:00:00'))
+j1 = Journey.create(departure: p1.name, arrival: p5.name, driver: d1, price: 5000, available_seats: 30, spaceship_name: "Moon Express", date: DateTime.parse('2020-03-14T07:00:00'))
+j2 = Journey.create(departure: p1.name, arrival: p3.name, driver: d2, price: 150000, available_seats: 200, spaceship_name: "New World", date: DateTime.parse('2020-03-14T07:00:00'))
+j3 = Journey.create(departure: p2.name, arrival: p8.name, driver: d1, price: 1400, available_seats: 10, spaceship_name: "Space Explorer", date: DateTime.parse('2020-03-14T07:00:00'))
+j4 = Journey.create(departure: p7.name, arrival: p1.name, driver: d1, price: 8999, available_seats: 80, spaceship_name: "Rucket", date: DateTime.parse('2020-03-14T07:00:00'))
+j5 = Journey.create(departure: p2.name, arrival: p9.name, driver: d1, price: 600, available_seats: 5, spaceship_name: "Lightspeed", date: DateTime.parse('2020-03-14T07:00:00'))
 
 
 Reservation.create(amount_of_passengers: 4, journey: j1, passenger: max)
