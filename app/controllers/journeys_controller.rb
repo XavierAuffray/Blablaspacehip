@@ -6,6 +6,8 @@
   def create
     @journey = Journey.new(journey_params)
     @journey.driver = current_driver
+    @planet = Planet.where(name: @journey.arrival)
+    @journey.photo =  @planet[0]['photo']
     if @journey.save
       redirect_to driver_path(current_driver)
     else
@@ -19,6 +21,12 @@
 
   def index
     @journeys = Journey.all
+  end
+
+  def destroy
+    @journey = Journey.find(params[:id])
+    @journey.destroy
+    redirect_to driver_path(current_driver)
   end
 
   private
