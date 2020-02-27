@@ -159,14 +159,16 @@ padding: 2px;
   position: absolute;
 }
 
-#buy {
+#buy a {
   bottom: 20px;
   left: 10px;
   font-size:20px;
   position: absolute;
-  color: black;
+  color: blue;
 }
 
 .fa-info-circle:before {
   color: blue;
 }
+
+
