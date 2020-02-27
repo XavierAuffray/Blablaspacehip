@@ -1,0 +1,30 @@
+<h1>Your Journeys</h1>
+
+<div class="container">
+  <div class="row">
+    <% @driver.journeys.each do |journey| %>
+      <div class="card-journey col-sm-3">
+        <div id="infos">
+          <%= link_to journey_path(journey) do %>
+            <i class='fas fa-info-circle'></i>
+          <% end %>
+        </div>
+        <div id="delete">
+          <%= link_to journey_path(journey), data: { confirm: 'Are you sure?' }, method: :delete do %>
+            <i class="fas fa-minus-circle"style='color:#ff0000;'></i>
+          <% end %>
+        </div>
+        <img src= <%= journey.photo %> />
+        <div class="card-journey-infos mx-3">
+          <div>
+            <h2><%= journey.departure.capitalize %> <i class="fas fa-space-shuttle"></i> <%= journey.arrival.capitalize %></h2>
+            <p> Departure time: <%= journey.date %></p>
+            <p> Available seats: <%= journey.available_seats %></p>
+          </div>
+          <h2 id="card-journey"> €<%= journey.price %></h2>
+          <img src= <%= journey.driver.photo %> class= "card-journey-user avatar-bordered" />
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

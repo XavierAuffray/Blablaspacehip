@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     if resource.class == Passenger
       journeys_path
     else
-      super
+      journeys_path
     end
   end
 end

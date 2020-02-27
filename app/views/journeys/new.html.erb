@@ -1,8 +1,8 @@
 <h1>Create a new Journey</h1>
 
 <%= simple_form_for @journey do |f| %>
-  <%= f.input :departure, label: 'Specify your departure please', error: 'Departure is mandatory, please specify one' %>
-  <%= f.input :arrival, label: 'Specify your arrival please', error: 'Arrival is mandatory, please specify one' %>
+  <%= f.input :departure, label: 'Specify your departure please', error: 'Departure is mandatory, please specify one', collection: Planet.all.map { |planet| planet.name} %>
+  <%= f.input :arrival, label: 'Specify your arrival please', error: 'Arrival is mandatory, please specify one', collection: Planet.all.map { |planet| planet.name} %>
   <%= f.input :date, label: 'Specify your date please', error: 'Date is mandatory, please specify one' %>
   <%= f.input :price, label: 'Specify your price please', error: 'Price is mandatory, please specify one' %>
   <%= f.input :available_seats, label: 'Specify the number of available seats please', error: 'Available seats is mandatory, please specify the number' %>

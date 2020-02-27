@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :reservations
   end
   resources :passengers, only: %i[new create destroy show]
+  resources :drivers, only: %i[show]
   get 'pages/login', to: 'pages#login', as: :login
   get 'pages/signup', to: 'pages#signup', as: :signup
   get 'pages/driver', to: 'pages#driver', as: :driver_page

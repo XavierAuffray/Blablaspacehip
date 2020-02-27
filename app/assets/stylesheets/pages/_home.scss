@@ -47,47 +47,6 @@
   color: #D23333;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-}
-
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
 .banner .container h3{
   color: orange;
 
@@ -100,10 +59,15 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 500px;
+  height: auto;
+  padding: 10px;
+  margin: 30px;
+  position:relative;
 }
 
 .card-journey > img {
-  height: 200px;
+  height: 100px;
   width: 100%;
   object-fit: cover;
 }
@@ -111,7 +75,7 @@
 .card-journey h2 {
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
+  margin: auto;
 }
 
 .card-journey p {
@@ -143,5 +107,62 @@
 }
 
 .slick-carousel {
-  width: 70%;
+  width: 80%;
+}
+
+.slick-slide {
+  overflow: hidden;
+  margin-left: 10px;
+}
+
+.backgr img {
+  height: 150px;
+  width: 150px;
+}
+
+.card-journey-infos {
+  display: flex;
+  flex-direction: column;
+}
+
+#card-journey {
+padding: 2px;
+}
+
+#infos {
+  bottom: 10px;
+  right: 10px;
+  font-size:20px;
+  position: absolute;
+  transition: 0.25s;
+}
+
+#infos:hover {
+  bottom: 10px;
+  right: 10px;
+  font-size:30px;
+  position: absolute;
+}
+
+#delete {
+  bottom: 35px;
+  right: 10px;
+  font-size:20px;
+  position: absolute;
+  transition: 0.25s;
+}
+
+#delete:hover {
+  bottom: 35px;
+  right: 10px;
+  font-size:30px;
+  position: absolute;
+}
+
+#buy {
+  bottom: 20px;
+  left: 10px;
+  font-size:20px;
+  position: absolute;
+  color: black;
 }
