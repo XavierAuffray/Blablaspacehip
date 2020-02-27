@@ -7,6 +7,5 @@
   <%= f.input :price, label: 'Specify your price please', error: 'Price is mandatory, please specify one' %>
   <%= f.input :available_seats, label: 'Specify the number of available seats please', error: 'Available seats is mandatory, please specify the number' %>
   <%= f.input :spaceship_name, label: 'Specify the name of the spaceship please', error: 'Spaceship is mandatory, please specify the name' %>
-  <%= f.input :photo, label: "Provide an URL of the arrival'pic please", error: 'URL is mandatory, please specify the name', input_html: {value: f.object.photo || 'https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/2631478/910/689/m2/fpnw/wm1/jifji2xf1zxkvc5ccfxksybbahbzl5wtx0ljt17lvyfebs1gw1j7sirnm5tcexuy-.jpg?1493751250&s=036367499282c13871fc02ee19445858'} %>
   <%= f.button :submit %>
 <% end %>

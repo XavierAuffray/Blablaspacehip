@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_27_114034) do
+ActiveRecord::Schema.define(version: 2020_02_27_122938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2020_02_27_114034) do
     t.bigint "driver_id", null: false
     t.string "photo"
     t.bigint "planet_id"
-    t.string "arrival", null: false
+    t.string "arrival"
     t.index ["driver_id"], name: "index_journeys_on_driver_id"
     t.index ["planet_id"], name: "index_journeys_on_planet_id"
   end
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2020_02_27_114034) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
   end
 
   create_table "reservations", force: :cascade do |t|
