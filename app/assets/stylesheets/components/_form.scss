@@ -25,6 +25,20 @@
   text-align: center;
 }
 
+#new_reservation {
+  color: #F05123;
+  opacity: 0.8;
+  width: 600px;
+  justify-content: center;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.form.container h1 {
+  color: #F05123;
+  font-weight: bolder;
+}
+
 .form.container {
   display: flex;
   flex-direction: column;
