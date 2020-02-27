@@ -20,8 +20,8 @@
         </div>
 
         <div id="buy">
-          <% if !current_passenger.nil? && journey.available_seats.positive? %>
-            <%= link_to 'Buy','#' %>
+          <% if journey.available_seats.positive? %>
+            <%= link_to 'Buy', new_journey_reservation_path(journey) %>
           <% end %>
         </div>
         <img src= <%= journey.photo %> />
