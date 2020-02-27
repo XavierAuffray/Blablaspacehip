@@ -20,7 +20,7 @@
 }
 
 .footer {
-  background: #F4F4F4;
+  background: rgba(0,0,0,0.6);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,6 +32,7 @@
 .footer-links {
   display: flex;
   align-items: center;
+  color: white;
 }
 .footer-links a {
   color: black;
@@ -39,12 +40,18 @@
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
+  color: white;
 }
 .footer-links a:hover {
   opacity: 1;
+  color: white;
 }
 .footer .fa-heart {
   color: #D23333;
+}
+
+.footer .credit {
+  color: white;
 }
 
 .banner .container h3{
@@ -57,17 +64,19 @@
 
 .card-journey {
   overflow: hidden;
-  background: white;
+  background: black;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 500px;
   height: auto;
   padding: 10px;
   margin: 30px;
   position:relative;
+  opacity: 0.8;
+  color: white;
 }
 
 .card-journey > img {
-  height: 100px;
+  height: 180px;
   width: 100%;
   object-fit: cover;
 }
@@ -160,15 +169,18 @@ padding: 2px;
   position: absolute;
 }
 
-#buy {
+#buy a {
   bottom: 20px;
   left: 10px;
   font-size:20px;
   position: absolute;
-  color: black;
+  color: blue;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2ce1b03669746df877d4f466813951b0f32976fd
 .fa-info-circle:before {
   color: blue;
 }

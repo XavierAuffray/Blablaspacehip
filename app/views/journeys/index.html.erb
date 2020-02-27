@@ -2,8 +2,13 @@
 <div class="container">
 <h1>Available jouneys</h1>
 
+<<<<<<< HEAD
 <div class="container">
   <div class="row">
+=======
+  <div class="container">
+    <div class="row">
+>>>>>>> 2ce1b03669746df877d4f466813951b0f32976fd
     <% Journey.all.each do |journey| %>
       <div class="card-journey col-sm-3">
         <div id="infos">
@@ -11,16 +16,10 @@
             <i class='fas fa-info-circle'></i>
           <% end %>
         </div>
-        <div id="delete">
-          <% if !current_driver.nil? %>
-            <%= link_to journey_path(journey), data: { confirm: 'Are you sure?' }, method: :delete do %>
-              <i class="fas fa-minus-circle"style='color:#ff0000;'></i>
-            <% end %>
-          <% end %>
-        </div>
+
         <div id="buy">
           <% if !current_passenger.nil? && journey.available_seats.positive? %>
-            <%= link_to 'Buy','#' %>
+            <%= link_to 'Buy',new_journey_reservation_path(journey) %>
           <% end %>
         </div>
         <img src= <%= journey.photo %> />
@@ -34,6 +33,10 @@
               <% else %>
                 <%= FULL %>
               <% end %>
+<<<<<<< HEAD
+=======
+            </p>
+>>>>>>> 2ce1b03669746df877d4f466813951b0f32976fd
           </div>
           <h2 id="card-journey"> <%= journey.price %></h2>
           <img src= <%= journey.driver.photo %> class= "card-journey-user avatar-bordered" />

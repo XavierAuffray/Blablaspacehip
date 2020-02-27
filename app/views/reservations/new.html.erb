@@ -1,3 +1,6 @@
+<div class="create-reservation-form-wrapper">
+
+    <div class="form container">
 <% if !current_passenger.nil? %>
   <h1>Make a reservation</h1>
   <%= simple_form_for [@journey, @reservation] do |f| %>
@@ -5,6 +8,8 @@
     <%= f.button :submit %>
   <% end %>
 <% else %>
-<h1>You cannot make a reservation as Driver</h1>
+<h1>You cannot make a reservation</h1>
 <h1>Please login as Passenger</h1>
 <% end %>
+</div>
+</div>

@@ -16,6 +16,29 @@
   text-align: center;
 }
 
+#new_journey {
+  color: #F05123;
+  opacity: 0.8;
+  width: 600px;
+  justify-content: center;
+  font-weight: bolder;
+  text-align: center;
+}
+
+#new_reservation {
+  color: #F05123;
+  opacity: 0.8;
+  width: 600px;
+  justify-content: center;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.form.container h1 {
+  color: #F05123;
+  font-weight: bolder;
+}
+
 .form.container {
   display: flex;
   flex-direction: column;
@@ -70,3 +93,6 @@ transition: all 0.4s ease 0s;
   align-items: center;
 }
 
+#journeyh1 {
+  color: white;
+}

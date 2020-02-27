@@ -1,11 +1,16 @@
-<h1>Create a new Journey</h1>
-<canvas id="cheesy-background"></canvas>
+<h1 class="journeyh1">Create a new Journey</h1>
+
+<div class="create-journey-form-wrapper">
+    <div class="form container">
+
 <%= simple_form_for @journey do |f| %>
-  <%= f.input :departure, label: 'Specify your departure please', error: 'Departure is mandatory, please specify one', collection: Planet.all.map { |planet| planet.name} %>
-  <%= f.input :arrival, label: 'Specify your arrival please', error: 'Arrival is mandatory, please specify one', collection: Planet.all.map { |planet| planet.name} %>
-  <%= f.input :date, label: 'Specify your date please', error: 'Date is mandatory, please specify one' %>
-  <%= f.input :price, label: 'Specify your price please', error: 'Price is mandatory, please specify one' %>
-  <%= f.input :available_seats, label: 'Specify the number of available seats please', error: 'Available seats is mandatory, please specify the number' %>
-  <%= f.input :spaceship_name, label: 'Specify the name of the spaceship please', error: 'Spaceship is mandatory, please specify the name' %>
+  <%= f.input :departure, label: 'Specify your departure', error: 'Departure is mandatory, specify one', collection: Planet.all.map { |planet| planet.name} %>
+  <%= f.input :arrival, label: 'Specify your arrival', error: 'Arrival is mandatory, specify one', collection: Planet.all.map { |planet| planet.name} %>
+  <%= f.input :date, label: 'Specify your date', error: 'Date is mandatory, please specify one' %>
+  <%= f.input :price, label: 'Specify your price', error: 'Price is mandatory, specify one' %>
+  <%= f.input :available_seats, label: 'Specify the number of available seats', error: 'Available seats is mandatory, specify the number' %>
+  <%= f.input :spaceship_name, label: 'Specify the name of the spaceship', error: 'Spaceship is mandatory, specify the name' %>
   <%= f.button :submit %>
 <% end %>
+</div>
+</div>

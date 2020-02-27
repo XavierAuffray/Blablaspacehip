@@ -45,3 +45,12 @@
   transform: rotate(45deg);
   background-color: rgba(255,255,255,0);
 }
+
+#get-started {
+  background-color: transparent !important;
+  color: white !important;
+}
+
+#get-started::hover {
+  background-color: transparent !important;
+}
