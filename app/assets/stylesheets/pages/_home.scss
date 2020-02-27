@@ -57,17 +57,19 @@
 
 .card-journey {
   overflow: hidden;
-  background: white;
+  background: black;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 500px;
   height: auto;
   padding: 10px;
   margin: 30px;
   position:relative;
+  opacity: 0.8;
+  color: white;
 }
 
 .card-journey > img {
-  height: 100px;
+  height: 180px;
   width: 100%;
   object-fit: cover;
 }
