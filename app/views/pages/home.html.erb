@@ -9,7 +9,7 @@
 </div>
 
 <div class="container">
-  <h3>Some journeys wich lay interest tou</h3>
+  <h3>Some journeys which may interest you</h3>
   <div class="row">
     <% Journey.all.first(3).each do |journey| %>
       <div class="card-journey col-sm-3">
@@ -18,13 +18,7 @@
             <i class='fas fa-info-circle'></i>
           <% end %>
         </div>
-        <div id="delete">
-          <% if !current_driver.nil? %>
-            <%= link_to journey_path(journey), data: { confirm: 'Are you sure?' }, method: :delete do %>
-              <i class="fas fa-minus-circle"style='color:#ff0000;'></i>
-            <% end %>
-          <% end %>
-        </div>
+
         <div id="buy">
           <% if !current_passenger.nil? && journey.available_seats.positive? %>
             <%= link_to 'Buy','#' %>
