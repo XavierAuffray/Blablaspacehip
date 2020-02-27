@@ -10,8 +10,11 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"></script>
     <%= render 'shared/navbar' %>
-    <%= yield %>
+    <div class="content_push">
+      <%= yield %>
+    </div>
 
   <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
   <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->

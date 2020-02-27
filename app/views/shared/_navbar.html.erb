@@ -34,17 +34,27 @@
             <% end %>
           </div>
         </div>
+
       </li>
       <% else %>
-        <li class="nav-item">
-          <%= link_to "All journeys", journeys_path, class: "nav-link" %>
-       </li>
-       <li class="nav-item">
-          <%= link_to "Login", login_path, class: "nav-link" %>
-       </li>
-       <li class="nav-item">
-         <%= link_to 'Sign up', signup_path, class: "nav-link" %>
-       </li>
+        <%= render(
+          "shared/animated_button",
+          text: "All journeys",
+          link_url: journeys_path,
+          link_class: "animated-button1"
+        )%>
+        <%= render(
+          "shared/animated_button",
+          text: "Login",
+          link_url: login_path,
+          link_class: "animated-button1"
+        )%>
+        <%= render(
+          "shared/animated_button",
+          text: "Sign up",
+          link_url: signup_path,
+          link_class: "animated-button1"
+        )%>
        <% end %>
     </ul>
   </div>

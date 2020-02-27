@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_02_27_122938) do
     t.string "spaceship_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "driver_name"
     t.bigint "driver_id", null: false
     t.string "photo"
     t.bigint "planet_id"
