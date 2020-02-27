@@ -2,7 +2,14 @@
 
   <% if !current_passenger.nil? || !current_driver.nil? %>
     <h3>You are already logged in</h3>
-    <h3>Please log out to create a new account</h3>
+    <h3>Please
+      <% if !current_passenger.nil? %>
+        <%= link_to 'Log out', destroy_passenger_session_path, method: :delete %>
+      <% end %>
+      <% if !current_driver.nil? %>
+        <%= link_to 'Log out', destroy_driver_session_path, method: :delete %>
+      <% end %>
+      to create a new account</h3>
   <% else %>
     <div class="cards">
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.anakinworld.com/uploads/entries/original/chewbacca-b4827de1d704b98f972993a97569bea3ef774cf1.jpeg)">
