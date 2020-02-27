@@ -20,7 +20,7 @@
 }
 
 .footer {
-  background: #F4F4F4;
+  background: rgba(0,0,0,0.6);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,6 +32,7 @@
 .footer-links {
   display: flex;
   align-items: center;
+  color: white;
 }
 .footer-links a {
   color: black;
@@ -39,12 +40,18 @@
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
+  color: white;
 }
 .footer-links a:hover {
   opacity: 1;
+  color: white;
 }
 .footer .fa-heart {
   color: #D23333;
+}
+
+.footer .credit {
+  color: white;
 }
 
 .banner .container h3{
