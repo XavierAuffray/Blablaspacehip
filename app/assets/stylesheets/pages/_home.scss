@@ -135,6 +135,7 @@ padding: 2px;
   font-size:20px;
   position: absolute;
   transition: 0.25s;
+  color:blue;
 }
 
 #infos:hover {
@@ -166,3 +167,10 @@ padding: 2px;
   position: absolute;
   color: black;
 }
+
+
+.fa-info-circle:before {
+  color: blue;
+}
+
+
