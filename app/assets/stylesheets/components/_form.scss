@@ -11,7 +11,7 @@
 .form.container {
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5)), url(https://img.purch.com/rc/1920x1200/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzAyNi82Njgvb3JpZ2luYWwvaW50ZXJnYWxhY3RpYy1oZWF2eXdlaWdodC0xOTIwLmpwZw==);
+  // background-image: linear-gradient(rgba(0, 0, 0, 0.5)), url(https://img.purch.com/rc/1920x1200/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzAyNi82Njgvb3JpZ2luYWwvaW50ZXJnYWxhY3RpYy1oZWF2eXdlaWdodC0xOTIwLmpwZw==);
   width: 625px;
 
 }
@@ -34,13 +34,13 @@ a {
 
 
 .btn {
-color: #494949 !important;
-text-transform: uppercase;
-text-decoration: none;
-padding: 4px;
-border: 4px solid #494949 !important;
-display: inline-block;
-transition: all 0.4s ease 0s;
+  color: #494949 !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 4px;
+  border: 4px solid #494949 !important;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
 }
 
 
@@ -50,3 +50,15 @@ background: #f6b93b;
 border-color: #f6b93b !important;
 transition: all 0.4s ease 0s;
 }
+
+.sign-up-form-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

@@ -1,37 +1,42 @@
-<% if current_passenger.nil? && current_driver.nil? %>
+<canvas id="cheesy-background"></canvas>
 
-  <div class="form container">
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
+<div class="sign-up-form-wrapper">
+  <% if current_passenger.nil? && current_driver.nil? %>
 
-      <div class="form-inputs">
-        <%= f.input :name,
-                    required: true,
-                    input_html: { autocomplete: "your name" } %>
-        <%= f.input :email,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" }%>
-        <%= f.input :photo,
-                    required: false,
-                    autofocu•••••••••••••••s: true,
-                    input_html: {value: f.object.photo || 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Bruce_McCandless_II_during_EVA_in_1984.jpg/220px-Bruce_McCandless_II_during_EVA_in_1984.jpg'}%>
-        <%= f.input :password,
-                    required: true,
-                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                    required: true,
-                    input_html: { autocomplete: "new-password" } %>
-      </div>
-      <div class="buttons-container">
-        <div class="btn btn-light">
-          <%= f.button :submit, "Sign up" %>
+    <div class="form container">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="form-inputs">
+          <%= f.input :name,
+                      required: true,
+                      input_html: { autocomplete: "your name" } %>
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" }%>
+          <%= f.input :photo,
+                      required: false,
+                      autofocu•••••••••••••••s: true,
+                      input_html: {value: f.object.photo || 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Bruce_McCandless_II_during_EVA_in_1984.jpg/220px-Bruce_McCandless_II_during_EVA_in_1984.jpg'}%>
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { autocomplete: "new-password" } %>
         </div>
-        <%#= render "devise/shared/links" %>
-      </div>
-    <% end %>
-  </div>
-<% else %>
-  <h1>You're already logged in</h1>
-<% end %>
+        <div class="buttons-container">
+          <div class="btn btn-light">
+            <%= f.button :submit, "Sign up" %>
+          </div>
+          <%#= render "devise/shared/links" %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <h1>You're already logged in</h1>
+  <% end %>
+
+</div>
