@@ -22,10 +22,10 @@
                 <%= link_to 'Buy','#' %>
               <% end %>
             </div>
-            <img src= <%= journey.photo %> />
+            <img src= <%= journey.planet.photo %> />
             <div class="card-journey-infos mx-3">
               <div>
-                <h2><%= journey.departure.capitalize %> <i class="fas fa-space-shuttle"></i> <%= journey.arrival.capitalize %></h2>
+                <h2><%= journey.departure.capitalize %> <i class="fas fa-space-shuttle"></i> <%= journey.arrival.name %></h2>
                 <p> Departure time: <%= journey.date %></p>
                 <p>
                   <% if journey.available_seats.positive? %>

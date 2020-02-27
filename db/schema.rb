@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_27_102834) do
+ActiveRecord::Schema.define(version: 2020_02_27_114034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,17 +31,16 @@ ActiveRecord::Schema.define(version: 2020_02_27_102834) do
 
   create_table "journeys", force: :cascade do |t|
     t.string "departure"
-    t.string "arrival"
     t.datetime "date"
     t.integer "price"
     t.integer "available_seats"
     t.string "spaceship_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "driver_name"
     t.bigint "driver_id", null: false
     t.string "photo"
     t.bigint "planet_id"
+    t.string "arrival", null: false
     t.index ["driver_id"], name: "index_journeys_on_driver_id"
     t.index ["planet_id"], name: "index_journeys_on_planet_id"
   end
@@ -62,7 +61,6 @@ ActiveRecord::Schema.define(version: 2020_02_27_102834) do
 
   create_table "planets", force: :cascade do |t|
     t.string "name"
-    t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
