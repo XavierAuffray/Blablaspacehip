@@ -1,0 +1,52 @@
+#new_driver {
+  color: #F05123;
+  opacity: 0.8;
+  width: 600px;
+  justify-content: center;
+  font-weight: bolder;
+  text-align: center;
+
+}
+
+.form.container {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5)), url(https://img.purch.com/rc/1920x1200/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzAyNi82Njgvb3JpZ2luYWwvaW50ZXJnYWxhY3RpYy1oZWF2eXdlaWdodC0xOTIwLmpwZw==);
+  width: 625px;
+
+}
+.form-actions {
+  width: 625px;
+  justify-content: center;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-weight: bolder;
+}
+
+a {
+  color: white;
+}
+
+
+.btn {
+color: #494949 !important;
+text-transform: uppercase;
+text-decoration: none;
+padding: 4px;
+border: 4px solid #494949 !important;
+display: inline-block;
+transition: all 0.4s ease 0s;
+}
+
+
+.btn:hover {
+color: #ffffff !important;
+background: #f6b93b;
+border-color: #f6b93b !important;
+transition: all 0.4s ease 0s;
+}
