@@ -8,24 +8,49 @@
   </div>
 </div>
 
-<div class="carousel-container">
-  <div class="slick-carousel" data-slick='{"slidesToShow": 3, "slidesToScroll": 4}'>
-      <% Journey.all.each do |journey| %>
-        <div class="card-journey">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-          <div class="card-journey-infos">
-            <div>
-              <h2> Journey: <%= journey.departure %> <i class="fas fa-space-shuttle"></i> <%= journey.arrival %></h2>
-              <p> Departure time: <%= journey.date %></p>
-              <p> Available seats: <%= journey.available_seats %></p>
-            </div>
-            <h2 class="card-journey"> €<%= journey.price %></h2>
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-journey-user avatar-bordered" />
-          </div>
+<div class="container">
+  <h3>Some journeys wich lay interest tou</h3>
+  <div class="row">
+    <% Journey.all.first(3).each do |journey| %>
+      <div class="card-journey col-sm-3">
+        <div id="infos">
+          <%= link_to journey_path(journey) do %>
+            <i class='fas fa-info-circle'></i>
+          <% end %>
         </div>
-      <% end %>
+        <div id="delete">
+          <% if !current_driver.nil? %>
+            <%= link_to journey_path(journey), data: { confirm: 'Are you sure?' }, method: :delete do %>
+              <i class="fas fa-minus-circle"style='color:#ff0000;'></i>
+            <% end %>
+          <% end %>
+        </div>
+        <div id="buy">
+          <% if !current_passenger.nil? && journey.available_seats.positive? %>
+            <%= link_to 'Buy','#' %>
+          <% end %>
+        </div>
+        <img src= <%= journey.photo %> />
+        <div class="card-journey-infos mx-3">
+          <div>
+            <h2><%= journey.departure.capitalize %> <i class="fas fa-space-shuttle"></i> <%= journey.arrival.capitalize %></h2>
+            <p> Departure time: <%= journey.date %></p>
+            <p>
+              <% if journey.available_seats.positive? %>
+                <%= journey.available_seats %> seat(s) left</p>
+              <% else %>
+                <%= FULL %>
+              <% end %>
+            </p>
+          </div>
+          <h2 id="card-journey"> <%= journey.price %></h2>
+          <img src= <%= journey.driver.photo %> class= "card-journey-user avatar-bordered" />
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
+
 
 <div class="footer">
   <div class="footer-links">
