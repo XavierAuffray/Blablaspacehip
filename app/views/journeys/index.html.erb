@@ -3,7 +3,12 @@
 <div class="text">
   <h1>Available jouneys</h1>
 </div>
-
+  <div class="flash flash-success alert alert-dismissible fade hide" role="alert" data-signin="<%= (@sign_in_timing).to_i %>">
+    <span><strong>Welcome</strong> 🚀 you successfully signed in to Blablaspaceship.</span>
+    <a data-dismiss="alert" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </a>
+  </div>
 <div class="container">
   <div class="row">
   <div class="container">
@@ -30,15 +35,15 @@
         <div class="card-journey-infos mx-3">
           <div>
             <h2><%= journey.departure.capitalize %> <i class="fas fa-space-shuttle"></i> <%= journey.arrival.capitalize %></h2>
-            <p> Departure time: <%= journey.date %></p>
+            <p><%= journey.date %></p>
             <p>
               <% if journey.available_seats.positive? %>
                 <%= journey.available_seats %> seat(s) left</p>
               <% else %>
-                <%= FULL %>
+                 FULL
               <% end %>
           </div>
-          <h2 id="card-journey"> <%= journey.price %></h2>
+          <h2 id="card-journey">€<%= journey.price %></h2>
           <img src= <%= journey.driver.photo %> class= "card-journey-user avatar-bordered" />
         </div>
       </div>

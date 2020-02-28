@@ -1,4 +1,18 @@
   class JourneysController < ApplicationController
+  def index
+    @journeys = Journey.all
+
+    if current_driver
+      current_sign_in = current_driver.current_sign_in_at
+      last_sign_in = current_driver.last_sign_in_at
+      @sign_in_timing = current_sign_in - last_sign_in
+    else
+      current_sign_in = current_passenger.current_sign_in_at
+      last_sign_in = current_passenger.last_sign_in_at
+      @sign_in_timing = current_sign_in - last_sign_in
+    end
+  end
+
   def  new
     @journey = Journey.new
   end
@@ -19,9 +33,6 @@
     @journey = Journey.find(params[:id])
   end
 
-  def index
-    @journeys = Journey.all
-  end
 
   def destroy
     @journey = Journey.find(params[:id])
