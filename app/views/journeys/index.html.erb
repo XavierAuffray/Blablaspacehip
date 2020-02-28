@@ -2,13 +2,11 @@
 <div class="container">
 <h1>Available jouneys</h1>
 
-<<<<<<< HEAD
 <div class="container">
   <div class="row">
-=======
   <div class="container">
-    <div class="row">
->>>>>>> 2ce1b03669746df877d4f466813951b0f32976fd
+  <h3>Some journeys which may interest you</h3>
+  <div class="row">
     <% Journey.all.each do |journey| %>
       <div class="card-journey col-sm-3">
         <div id="infos">
@@ -18,8 +16,8 @@
         </div>
 
         <div id="buy">
-          <% if !current_passenger.nil? && journey.available_seats.positive? %>
-            <%= link_to 'Buy',new_journey_reservation_path(journey) %>
+          <% if journey.available_seats.positive? %>
+            <%= link_to 'Buy', new_journey_reservation_path(journey) %>
           <% end %>
         </div>
         <img src= <%= journey.photo %> />
@@ -33,10 +31,6 @@
               <% else %>
                 <%= FULL %>
               <% end %>
-<<<<<<< HEAD
-=======
-            </p>
->>>>>>> 2ce1b03669746df877d4f466813951b0f32976fd
           </div>
           <h2 id="card-journey"> <%= journey.price %></h2>
           <img src= <%= journey.driver.photo %> class= "card-journey-user avatar-bordered" />
