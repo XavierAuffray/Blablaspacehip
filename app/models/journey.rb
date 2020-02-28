@@ -9,4 +9,10 @@ class Journey < ApplicationRecord
   validates :price, presence: true, numericality: { greater_than: 0 }
   validates :available_seats, presence: true, numericality: { only_integer: true }
   validates :spaceship_name, presence: true
+
+
+
+  def seats_left
+    available_seats - reservations.map(&:amount_of_passengers).sum
+  end
 end
