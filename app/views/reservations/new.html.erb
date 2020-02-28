@@ -9,7 +9,7 @@
   <% end %>
 <% else %>
 <h1>You cannot make a reservation</h1>
-<h1>Please login as Passenger</h1>
+<h1>Please <%= link_to 'login', login_path %> as Passenger</h1>
 <% end %>
 </div>
 </div>
