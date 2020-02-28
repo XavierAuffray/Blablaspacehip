@@ -14,10 +14,13 @@
 }
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  position: relative;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 50vh;
+  width: 25vh;
+  position:absolute;
+  top: 5px;
 }
 
 .navbar-lewagon a{
@@ -29,6 +32,11 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+#navbarSupportedContent {
+  position: absolute;
+  right: 50px;
 }
 
 
