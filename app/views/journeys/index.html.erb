@@ -17,6 +17,7 @@
             <% end %>
           </div>
 
+
           <div id="buy">
             <% if journey.available_seats.positive? %>
               <%= link_to 'Buy', new_journey_reservation_path(journey) %>
