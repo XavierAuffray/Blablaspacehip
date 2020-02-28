@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 2020_02_28_132126) do
 
   create_table "journeys", force: :cascade do |t|
     t.string "departure"
-    t.string "arrival"
     t.datetime "date"
     t.integer "price"
     t.integer "available_seats"
@@ -46,7 +45,10 @@ ActiveRecord::Schema.define(version: 2020_02_28_132126) do
     t.string "driver_name"
     t.bigint "driver_id", null: false
     t.string "photo"
+    t.bigint "planet_id"
+    t.string "arrival"
     t.index ["driver_id"], name: "index_journeys_on_driver_id"
+    t.index ["planet_id"], name: "index_journeys_on_planet_id"
   end
 
   create_table "passengers", force: :cascade do |t|
@@ -80,6 +82,7 @@ ActiveRecord::Schema.define(version: 2020_02_28_132126) do
     t.index ["passenger_id"], name: "index_reservations_on_passenger_id"
   end
 
+  add_foreign_key "journeys", "planets"
   add_foreign_key "reservations", "journeys"
   add_foreign_key "reservations", "passengers"
 end

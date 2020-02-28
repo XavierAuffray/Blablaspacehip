@@ -1,22 +1,22 @@
 <div class="container mt-5">
 
-<div class="view-journey-form-wrapper">
-    <div class="form container">
-  <h1>Your reservation</h1>
+  <div class="view-journey-form-wrapper">
+      <div class="form container">
+    <h1>Your reservation</h1>
 
-  <%#= link_to 'edit', edit_journey_reservation_path(@reservation.journey_id, @reservation) %>
-  <%= link_to "Delete", journey_reservation_path(@reservation.journey_id, @reservation), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <div class="my-5">
+      <p class="text-white bg-dark font-weight-bold">Departure: <%= @reservation.journey.departure.capitalize %></p>
+      <p class="text-white bg-dark font-weight-bold">Arrival: <%= @reservation.journey.arrival.capitalize %></p>
+      <p class="text-white bg-dark font-weight-bold">Name for the reservation: <%= @reservation.passenger.name.capitalize %></p>
+      <p class="text-white bg-dark font-weight-bold">Price per person: <%= @reservation.journey.price %> €</p>
+      <p class="text-white bg-dark font-weight-bold">Number of passengers: <%= @reservation.amount_of_passengers  %> </p>
+      <p class="text-white bg-dark font-weight-bold">Total Price: <%= @reservation.amount_of_passengers * @reservation.journey.price %> €</p>
+    </div>
+    <div class="buttonspace">
+    <%= link_to 'View all your reservations', passenger_path(current_passenger), class: "btn" %>
+    <%= link_to "Delete your reservation", journey_reservation_path(@reservation.journey_id, @reservation), id: "deletebtn", class: "btn", method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
 
-  <div class="my-5">
-    <p>Departure: <%= @reservation.journey.departure.capitalize %></p>
-    <p>Arrival: <%= @reservation.journey.arrival.capitalize %></p>
-    <p>Name of the reservation: <%= @reservation.passenger.name.capitalize %></p>
-    <p>Price per person: <%= @reservation.journey.price %> €</p>
-    <p>Number of passengers: <%= @reservation.amount_of_passengers  %> </p>
-    <p>TOTAL PRICE: <%= @reservation.amount_of_passengers * @reservation.journey.price %> €</p>
+    </div>
   </div>
-
-  <%= link_to 'View all your reservations', passenger_path(current_passenger) %>
-</div>
-</div>
 </div>
