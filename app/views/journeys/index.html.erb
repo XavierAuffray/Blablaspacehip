@@ -14,8 +14,10 @@
     <% Journey.all.each do |journey| %>
       <div class="card-journey col-sm-3">
         <div id="infos">
-          <%= link_to journey_path(journey) do %>
-            <i class='fas fa-info-circle'></i>
+          <% if journey.driver == current_driver %>
+            <%= link_to journey_path(journey) do %>
+              <i class='fas fa-info-circle'></i>
+            <% end %>
           <% end %>
         </div>
 
