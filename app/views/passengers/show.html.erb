@@ -1,16 +1,73 @@
-<h1>Your Reservations</h1>
 
-<% @passenger.reservations.each do |reservation| %>
-  <div class="card-journey">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <div class="card-journey-infos">
-      <div>
-        <h2> Journey: <%= reservation.journey.departure %> <i class="fas fa-space-shuttle"></i> <%= reservation.journey.arrival %></h2>
-        <p> Departure time: <%= reservation.journey.date %></p>
-        <p> Available seats: <%= reservation.journey.available_seats %></p>
-      </div>
-      <h2 class="card-journey"> €<%= reservation.journey.price %></h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-journey-user avatar-bordered" />
-    </div>
+<div class="container">
+  <div class="text">
+    <h1>Your Reservations</h1>
+    <h3>Upcoming reservations</h3>
   </div>
-<% end %>
+  <div class="row">
+    <% @passenger.reservations.sort_by { |reservation| reservation.journey.date }.each do |reservation| %>
+      <% if reservation.journey.date > DateTime.now.to_date %>
+       <div class="card-journey col-sm-3">
+          <div id="infos">
+            <% if reservation.journey.driver == current_driver %>
+              <%= link_to journey_path(journey) do %>
+                <i class='fas fa-info-circle'></i>
+              <% end %>
+            <% end %>
+          </div>
+          <img src= <%= reservation.journey.photo %> />
+          <div class="card-journey-infos mx-3">
+            <div>
+              <h2><%= reservation.journey.departure.capitalize %> <i class="fas fa-space-shuttle"></i> <%= reservation.journey.arrival.capitalize %></h2>
+              <p> Departure time: <%= reservation.journey.date %></p>
+              <p>
+                You booked <%= reservation.amount_of_passengers %> seat(s)
+              </p>
+            </div>
+            <h2 id="card-journey"> <%= reservation.journey.price %></h2>
+            <img src= <%= reservation.journey.driver.photo %> class= "card-journey-user avatar-bordered" />
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="text">
+    <h3>Past reservations</h3>
+  </div>
+  <div class="row">
+    <% @passenger.reservations.sort_by { |reservation| reservation.journey.date }.each do |reservation| %>
+      <% if reservation.journey.date < DateTime.now.to_date %>
+         <div class="card-journey col-sm-3">
+            <div id="infos">
+              <% if reservation.journey.driver == current_driver %>
+                <%= link_to journey_path(journey) do %>
+                  <i class='fas fa-info-circle'></i>
+                <% end %>
+              <% end %>
+            </div>
+            <img src= <%= reservation.journey.photo %> />
+            <div class="card-journey-infos mx-3">
+              <div>
+                <h2><%= reservation.journey.departure.capitalize %> <i class="fas fa-space-shuttle"></i> <%= reservation.journey.arrival.capitalize %></h2>
+                <p> Departure time: <%= reservation.journey.date %></p>
+                <p>
+                  You booked <%= reservation.amount_of_passengers %> seat(s)
+                </p>
+              </div>
+              <h2 id="card-journey"> <%= reservation.journey.price %></h2>
+              <img src= <%= reservation.journey.driver.photo %> class= "card-journey-user avatar-bordered" />
+            </div>
+          </div>
+      <% end %>
+    <% end %>
+    <% x = @passenger.reservations.sort_by { |reservation| reservation.journey.date } %>
+    <% if x.first.journey.date > DateTime.now.to_date %>
+      <div class="text container">
+        <p>No past reservations</p>
+      </div>
+    <% end %>
+  </div>
+</div>
