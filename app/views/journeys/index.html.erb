@@ -6,42 +6,40 @@
 
 <div class="container">
   <div class="row">
-  <div class="container">
-  <div class="text">
-    <h3>Some journeys which may interest you</h3>
-  </div>
-  <div class="row">
-    <% Journey.all.each do |journey| %>
-      <div class="card-journey col-sm-3">
-        <div id="infos">
-          <% if journey.driver == current_driver %>
-            <%= link_to journey_path(journey) do %>
-              <i class='fas fa-info-circle'></i>
-            <% end %>
-          <% end %>
-        </div>
-
-        <div id="buy">
-          <% if journey.available_seats.positive? %>
-            <%= link_to 'Buy', new_journey_reservation_path(journey) %>
-          <% end %>
-        </div>
-        <img src= <%= journey.photo %> />
-        <div class="card-journey-infos mx-3">
-          <div>
-            <h2><%= journey.departure.capitalize %> <i class="fas fa-space-shuttle"></i> <%= journey.arrival.capitalize %></h2>
-            <p> Departure time: <%= journey.date %></p>
-            <p>
-              <% if journey.available_seats.positive? %>
-                <%= journey.available_seats %> seat(s) left</p>
-              <% else %>
-                <%= puts 'FULL' %>
+    <% Journey.all.sort_by { |journey| journey.date }.each do |journey| %>
+      <% if journey.date > DateTime.now.to_date %>
+        <div class="card-journey col-sm-3">
+          <div id="infos">
+            <% if journey.driver == current_driver %>
+              <%= link_to journey_path(journey) do %>
+                <i class='fas fa-info-circle'></i>
               <% end %>
+            <% end %>
           </div>
-          <h2 id="card-journey"> <%= journey.price %></h2>
-          <img src= <%= journey.driver.photo %> class= "card-journey-user avatar-bordered" />
+
+
+          <div id="buy">
+            <% if journey.available_seats.positive? %>
+              <%= link_to 'Buy', new_journey_reservation_path(journey) %>
+            <% end %>
+          </div>
+          <img src= <%= journey.photo %> />
+          <div class="card-journey-infos mx-3">
+            <div>
+              <h2><%= journey.departure.capitalize %> <i class="fas fa-space-shuttle"></i> <%= journey.arrival.capitalize %></h2>
+              <p> Departure time: <%= journey.date %></p>
+              <p>
+                <% if journey.available_seats.positive? %>
+                  <%= journey.available_seats %> seat(s) left</p>
+                <% else %>
+                   FULL
+                <% end %>
+            </div>
+            <h2 id="card-journey"> <%= journey.price %></h2>
+            <img src= <%= journey.driver.photo %> class= "card-journey-user avatar-bordered" />
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
