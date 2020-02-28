@@ -29,7 +29,7 @@
               <p> Departure time: <%= journey.date %></p>
               <p>
                 <% if journey.available_seats.positive? %>
-                  <%= journey.available_seats %> seat(s) left</p>
+                  <%= journey.seats_left %> seat(s) left</p>
                 <% else %>
                    FULL
                 <% end %>

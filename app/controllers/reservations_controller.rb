@@ -10,13 +10,17 @@ class ReservationsController < ApplicationController
     @reservation.journey = @journey
     @passenger = current_passenger
     @reservation.passenger = @passenger
-    @journey.available_seats -= @reservation.amount_of_passengers
-    if @reservation.save && @journey.save
+    if @reservation.save
       redirect_to journey_reservation_path(@journey, @reservation)
     else
       render 'new'
     end
   end
+  #     redirect_to journey_reservation_path(@journey, @reservation)
+  #   else
+  #     render 'new'
+  #   end
+  # end
 
   def show
     @reservation = Reservation.find(params[:id])
