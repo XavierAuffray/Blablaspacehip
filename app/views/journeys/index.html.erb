@@ -1,11 +1,15 @@
 
 <div class="container">
-<h1>Available jouneys</h1>
+<div class="text">
+  <h1>Available jouneys</h1>
+</div>
 
 <div class="container">
   <div class="row">
   <div class="container">
-  <h3>Some journeys which may interest you</h3>
+  <div class="text">
+    <h3>Some journeys which may interest you</h3>
+  </div>
   <div class="row">
     <% Journey.all.each do |journey| %>
       <div class="card-journey col-sm-3">
